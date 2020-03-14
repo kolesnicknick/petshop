@@ -1,9 +1,18 @@
-var express = require('express');
-var router = express.Router();
+const { CreateUserDto, UpdateUserDto } = require('./user.dtos');
+const { Router } = require('express');
+const usersController = require('./users.controller');
+const createValidator = require('../../common/middlewares/create-validator');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+const router = new Router();
+
+router.get('/', usersController.findMany);
+
+router.get('/:id', usersController.findOneById);
+
+router.post('/', createValidator(CreateUserDto), usersController.createOne);
+
+router.put('/:id', createValidator(UpdateUserDto), usersController.updateOne);
+
+router.delete('/:id', usersController.removeOne);
 
 module.exports = router;

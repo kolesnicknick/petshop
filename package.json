@@ -1,11 +1,13 @@
 {
-  "name": "untitled",
-  "version": "0.0.0",
+  "name": "petshop",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node common/bin/www"
+    "start": "node common/bin/www",
+    "dev": "nodemon common/bin/www"
   },
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
