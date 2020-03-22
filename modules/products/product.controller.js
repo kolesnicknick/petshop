@@ -9,6 +9,15 @@ class ProductController {
         }
     }
 
+    async createOne(req, res, next){
+        try {
+            const product = await productService.createOne(req.body);
+            res.json(product);
+        } catch (e) {
+            next(e);
+        }
+    }
+
     async getProductByID(req, res, next){
         try {
             const products = await productService.findOneById(req.params.id);

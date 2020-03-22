@@ -17,6 +17,7 @@ const ProductModel = Product.init({
     water_type: {type: DataTypes.STRING, allowNull:true},
     temper: {type: DataTypes.STRING, allowNull:true},
     imageSrc: {type: DataTypes.STRING, allowNull:true},
+    UserId: {type: DataTypes.INTEGER, defaultValue: 1, allowNull:false},
     isSold: {
         type: DataTypes.BOOLEAN, default: false
     }

@@ -32,10 +32,12 @@ class UsersController {
     }
 
     async findMe(req, res, next){
+        console.log('Looking for me?');
         try {
-            const id = req.params.id;
+            const id = req.user.id;
+            console.log(req);
             const user = await usersService.findOneById(id);
-            const account = await accountService.findOneByUserId(id);
+            user.account = await accountService.findOneByUserId(id);
             res.json(user);
         } catch (e) {
             next(e);

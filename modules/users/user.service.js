@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const { UserModel } = require('./user.model');
-const { BadRequest, NotFound } = require('../../common/exceptions/exceptions');
+const { BadRequest, NotFound } = require('../../common/exceptions/facade');
 
 class UsersService {
 

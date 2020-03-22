@@ -17,7 +17,8 @@ const UserModel = User.init({
 
 
 console.log(sequelize.models);
-UserModel.hasOne(AccountModel, {as: 'Account', foreignKey: 'userID'});
-UserModel.hasMany(ProductModel, {as: 'Product'});
+UserModel.hasOne(AccountModel, {as: 'Account', foreignKey: 'UserId'});
+UserModel.hasMany(ProductModel);
+ProductModel.belongsTo(UserModel,{as: 'Product', foreignKey: 'UserId', defaultValue: 1});
 
 module.exports = { UserModel };

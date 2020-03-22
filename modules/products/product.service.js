@@ -1,5 +1,5 @@
-const ProductModel = require('./product.model');
-const { BadRequest, NotFound } = require('../../common/exceptions/exceptions');
+const { ProductModel } = require('./product.model');
+const { BadRequest, NotFound } = require('../../common/exceptions/facade');
 
 class ProductService {
 
@@ -28,8 +28,8 @@ class ProductService {
     }
 
     async createOne(productData) {
-        const ProductModel = new ProductModel(productData);
-        return await ProductModel.save();
+        const productModel = new ProductModel(productData);
+        return await productModel.save();
     }
 
     async updateOne(id, productData) {

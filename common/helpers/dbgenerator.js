@@ -1,19 +1,24 @@
 const {UserModel} = require ('../../modules/users/user.model');
+const userService = require ('../../modules/users/user.service');
 const {AccountModel} = require ('../../modules/accounts/account.model');
+const {ProductModel} = require ('../../modules/products/product.model');
+const data = require('./data');
 
-// UserModel.create({
-//     firstName: "Niko",
-//     lastName: "Kole",
-//     email: "kolesniknikolai92@gmail.com",
-//     password: "Password1",
-// }).then(console.log);
-//
-// AccountModel.create({
-//     balance: 1000,
-//     userID: 1,
-//     userType: 'admin'
-// }).then(console.log);
 
-UserModel.findOne({ where: { id: 1 } }).then(
-    res => console.log(`THIS IS THE USEEEEEER: ${res}`)
-);
+userService.createOne({
+    firstName: "Niko",
+    lastName: "Kole",
+    email: "kolesniknikolai92@gmail.com",
+    password: "Password1",
+}).then(user => {AccountModel.create({
+    balance: 1000,
+    userID: user.id,
+    userType: 'admin'
+}).then(console.log);});
+
+data.data.forEach(entry => {
+    const product = ProductModel.create(
+        entry
+    );
+    console.log(product);
+});

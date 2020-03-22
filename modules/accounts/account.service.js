@@ -1,5 +1,5 @@
 const { AccountModel } = require('./account.model');
-const {BadRequest, NotFound} = require('../../common/exceptions/exceptions');
+const {BadRequest, NotFound} = require('../../common/exceptions/facade');
 
 class AccountService {
 
