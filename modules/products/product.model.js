@@ -1,14 +1,25 @@
-const { DataTypes, Model } = require('sequelize');
+const { DataTypes, Model} = require('sequelize');
 const sequelize = require('../../db');
 
-class Product extends Model {}
+class Product extends Model {
+}
 
 const ProductModel = Product.init({
-    id: { type: DataTypes.INTEGER, primaryKey: true, allowNull: false, autoIncrement: true },
-    name: { type: DataTypes.STRING, allowNull: true },
-    lastName: { type: DataTypes.STRING, allowNull: true },
-    email: { type: DataTypes.STRING, unique: true },
-    password: { type: DataTypes.STRING, validate: { min: 4 } }
-}, { sequelize });
+    id: {type: DataTypes.INTEGER, primaryKey: true, allowNull: false, autoIncrement: true},
+    name: {type: DataTypes.STRING, allowNull: true},
+    species: {type: DataTypes.STRING, allowNull: false},
+    price: {type: DataTypes.INTEGER, allowNull: false},
+    gender: {type: DataTypes.STRING, allowNull: true},
+    weight: {type: DataTypes.FLOAT, allowNull: true},
+    birth_date: {type: DataTypes.DATE, allowNull: true},
+    color: {type: DataTypes.STRING, allowNull:true},
+    breed: {type: DataTypes.STRING, allowNull:true},
+    water_type: {type: DataTypes.STRING, allowNull:true},
+    temper: {type: DataTypes.STRING, allowNull:true},
+    imageSrc: {type: DataTypes.STRING, allowNull:true},
+    isSold: {
+        type: DataTypes.BOOLEAN, default: false
+    }
+}, {sequelize, modelName: 'Product'});
 
-module.exports = ProductModel;
+module.exports = { ProductModel } ;

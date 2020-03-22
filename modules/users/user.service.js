@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
-const UserModel = require('./user.model');
-const { BadRequest, NotFound } = require('../../common/exceptions');
+const { UserModel } = require('./user.model');
+const { BadRequest, NotFound } = require('../../common/exceptions/exceptions');
 
 class UsersService {
 
@@ -29,6 +29,7 @@ class UsersService {
     }
 
     async createOne(userData) {
+        console.log(UserModel);
         const existingUser = await UserModel.findOne({
             where: { email: userData.email }
         });
@@ -56,4 +57,5 @@ class UsersService {
     }
 }
 
-module.exports = new UsersService();
+const userService = new UsersService();
+module.exports = userService;

@@ -1,4 +1,7 @@
 const { DataTypes, Model } = require('sequelize');
+const { AccountModel } = require('../accounts/account.model');
+const { ProductModel } = require('../products/product.model');
+
 const sequelize = require('../../db');
 
 class User extends Model {}
@@ -8,7 +11,13 @@ const UserModel = User.init({
     firstName: { type: DataTypes.STRING, allowNull: true },
     lastName: { type: DataTypes.STRING, allowNull: true },
     email: { type: DataTypes.STRING, unique: true },
-    password: { type: DataTypes.STRING, validate: { min: 4 } }
-}, { sequelize });
+    password: { type: DataTypes.STRING, validate: { min: 4 }},
+}, { sequelize,
+    modelName: 'User'});
 
-module.exports = UserModel;
+
+console.log(sequelize.models);
+UserModel.hasOne(AccountModel, {as: 'Account', foreignKey: 'userID'});
+UserModel.hasMany(ProductModel, {as: 'Product'});
+
+module.exports = { UserModel };

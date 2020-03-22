@@ -1,5 +1,5 @@
 const Joi = require('joi');
-
+console.log('User Validation');
 const CreateUserDto = Joi.object().keys({
     firstName: Joi.string().min(1).required(),
     lastName: Joi.string().min(1).required(),
