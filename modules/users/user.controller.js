@@ -1,42 +1,43 @@
 const usersService = require('./user.service');
 const accountService = require('../accounts/account.service');
-const {asyncHandler} = require('../../common/middlewares/async.handler');
+const {asyncHandler} = require('../../common/helpers/async.handler');
+const {responseHandler} = require('../../common/helpers/response.handler');
 
 class UsersController {
 
-    findMany  = asyncHandler(async (req, res, next) => {
-            const users = await usersService.findMany();
-            res.json(users);
+    findMany = asyncHandler(async (req, res, next) => {
+        const users = await usersService.findMany();
+        responseHandler(res, users);
     });
 
-     findOneById =  asyncHandler(async (req, res, next) => {
-            const user = await usersService.findOneById(req.params.id);
-            res.json(user);
+    findOneById = asyncHandler(async (req, res, next) => {
+        const user = await usersService.findOneById(req.params.id);
+        responseHandler(res, user);
     });
 
     createOne = asyncHandler(async (req, res, next) => {
-            const user = await usersService.createOne(req.body);
-            console.log({ userId: user.id, userType: "default", balance: 1000 });
-            const account = await accountService.createOne({ userId: user.id, userType: "default", balance: 1000 });
-            res.json(user);
+        const user = await usersService.createOne(req.body);
+        console.log({userId: user.id, userType: "default", balance: 1000});
+        const account = await accountService.createOne({userId: user.id, userType: "default", balance: 1000});
+        responseHandler(res, user);
     });
 
-    findMe =  asyncHandler(async (req, res, next) =>{
-            const id = req.user.id;
-            console.log(req);
-            const user = await usersService.findOneById(id);
-            user.account = await accountService.findOneByUserId(id);
-            res.json(user);
+    findMe = asyncHandler(async (req, res, next) => {
+        const id = req.user.id;
+        console.log(req);
+        const user = await usersService.findOneById(id);
+        user.account = await accountService.findOneByUserId(id);
+        responseHandler(res, user);
     });
 
-    updateOne =  asyncHandler(async (req, res, next) => {
-            const user = await usersService.updateOne(req.body);
-            res.json(user);
+    updateOne = asyncHandler(async (req, res, next) => {
+        const user = await usersService.updateOne(req.body);
+        responseHandler(res, user);
     });
 
     removeOne = asyncHandler(async (req, res, next) => {
-            const result = await usersService.removeOne(req.params.id);
-            res.json(result);
+        const result = await usersService.removeOne(req.params.id);
+        responseHandler(res, result);
     });
 }
 
