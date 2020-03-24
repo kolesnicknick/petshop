@@ -1,6 +1,6 @@
 const authService = require('./auth.service');
-const {asyncHandler} = require('../../common/helpers/async.handler');
-const {responseHandler} = require('../../common/helpers/response.handler');
+const asyncHandler = require('../../common/helpers/async.handler');
+const responseHandler = require('../../common/helpers/response.handler');
 
 class AuthController{
     login = asyncHandler(async (req, res, next) =>{

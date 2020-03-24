@@ -1,7 +1,7 @@
 const usersService = require('./user.service');
 const accountService = require('../accounts/account.service');
-const {asyncHandler} = require('../../common/helpers/async.handler');
-const {responseHandler} = require('../../common/helpers/response.handler');
+const asyncHandler = require('../../common/helpers/async.handler');
+const responseHandler = require('../../common/helpers/response.handler');
 
 class UsersController {
 

@@ -1,6 +1,6 @@
 const productService = require('./product.service');
-const {asyncHandler} = require('../../common/helpers/async.handler');
-const {responseHandler} = require('../../common/helpers/response.handler');
+const asyncHandler = require('../../common/helpers/async.handler');
+const responseHandler = require('../../common/helpers/response.handler');
 
 class ProductController {
     getProducts = asyncHandler(async (req, res, next) => {

@@ -19,7 +19,7 @@ app.use('/products', productsRouter);
 
 
 app.use(errorHandler);
-sequelize.sync().then(require('./common/helpers/dbgenerator'));
+// sequelize.sync().then(require('./common/helpers/dbgenerator'));
 
 
 app.listen(54322, () => console.log('Server is started'));
