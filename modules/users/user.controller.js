@@ -21,10 +21,18 @@ class UsersController {
         }
     }
 
-    async createOne(req, res, next) {
+    async createOne(req, res, next) {      console.log('=================================================================================');
+        console.log('=================================================================================');
+        console.log('=================================================================================');
+        console.log('=================================================================================');
         try {
             const user = await usersService.createOne(req.body);
-            const account = await accountService.createOne({ userID: user.id, userType: "default", balance: 1000 });
+            console.log('=================================================================================');
+            console.log('=================================================================================');
+            console.log('=================================================================================');
+            console.log('=================================================================================');
+            console.log({ userId: user.id, userType: "default", balance: 1000 });
+            const account = await accountService.createOne({ userId: user.id, userType: "default", balance: 1000 });
             res.json(user);
         } catch (e) {
             next(e);

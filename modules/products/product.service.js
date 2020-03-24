@@ -27,8 +27,8 @@ class ProductService {
         return user;
     }
 
-    async createOne(productData) {
-        const productModel = new ProductModel(productData);
+    async createOne({ name, species, price, gender, weight, birth_date, color, breed, temper }) {
+        const productModel = new ProductModel({ name, species, price, gender, weight, birth_date, color, breed, temper, UserId:1, isSold: false});
         return await productModel.save();
     }
 

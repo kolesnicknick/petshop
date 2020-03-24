@@ -12,7 +12,7 @@ userService.createOne({
     password: "Password1",
 }).then(user => {AccountModel.create({
     balance: 1000,
-    userID: user.id,
+    userId: user.id,
     userType: 'admin'
 }).then(console.log);});
 
