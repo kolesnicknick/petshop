@@ -1,12 +1,13 @@
 const authService = require('./auth.service');
+const {asyncHandler} = require('../../common/middlewares/async.handler');
 
 class AuthController{
-    async login(req, res, next){
+    login = asyncHandler(async (req, res, next) =>{
         const body = await req.body;
         console.log(body);
         res.json(await authService.login(body));
         next();
-    }
+    });
 }
 
 const authController = new AuthController();
