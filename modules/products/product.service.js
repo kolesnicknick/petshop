@@ -3,8 +3,8 @@ const { BadRequest, NotFound } = require('../../common/exceptions/facade');
 
 class ProductService {
 
-    async findMany() {
-        return ProductModel.findAll();
+    async findMany(params) {
+        return ProductModel.findAll(params);
     }
 
     async findOneById(id) {
