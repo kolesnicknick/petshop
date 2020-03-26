@@ -1,8 +1,8 @@
-const {UserModel} = require ('../../modules/users/user.model');
-const userService = require ('../../modules/users/user.service');
-const {AccountModel} = require ('../../modules/accounts/account.model');
-const {ProductModel} = require ('../../modules/products/product.model');
-const data = require('./data');
+const {UserModel} = require ('../../../modules/users/user.model');
+const userService = require ('../../../modules/users/user.service');
+const {AccountModel} = require ('../../../modules/accounts/account.model');
+const {ProductModel} = require ('../../../modules/products/product.model');
+const data = require('./pets');
 
 
 userService.createOne({

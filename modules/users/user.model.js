@@ -4,7 +4,10 @@ const { ProductModel } = require('../products/product.model');
 
 const sequelize = require('../../db');
 
-class User extends Model {}
+class User extends Model {
+    isProvider(){return true;} //TODO
+    isAdmin(){return true;} //TODO
+}
 
 const UserModel = User.init({
     id: { type: DataTypes.INTEGER, primaryKey: true, allowNull: false, autoIncrement: true },
