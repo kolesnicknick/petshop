@@ -16,8 +16,8 @@ class UsersController {
     });
 
     createOne = asyncHandler(async (req, res, next) => {
+        //TODO move to transaction
         const user = await usersService.createOne(req.body);
-        console.log({userId: user.id, userType: "default", balance: 1000});
         const account = await accountService.createOne({userId: user.id, userType: "default", balance: 1000});
         responseHandler(res, user);
     });

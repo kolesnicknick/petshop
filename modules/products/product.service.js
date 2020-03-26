@@ -7,6 +7,10 @@ class ProductService {
         return ProductModel.findAll(params);
     }
 
+    async getAmountOfProducts() {
+        return ProductModel.count();
+    }
+
     async findOneById(id) {
         const product = await ProductModel.findOne({ where: { id } });
 

@@ -10,7 +10,6 @@
   "auth": {
     "secretKey": "alakhamora",
     "expiresIn": 360000
-
   },
   "mail": {
     "email":"petshop.node@gmail.com",

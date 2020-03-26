@@ -5,7 +5,7 @@ class Product extends Model {
 }
 
 const ProductModel = Product.init({
-    id: {type: DataTypes.INTEGER, primaryKey: true, allowNull: false, autoIncrement: true},
+    id: {type: DataTypes.UUID, primaryKey: true, allowNull: false},
     name: {type: DataTypes.STRING, allowNull: true},
     species: {type: DataTypes.STRING, allowNull: false},
     price: {type: DataTypes.DOUBLE, allowNull: false},

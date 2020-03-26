@@ -20,7 +20,8 @@ class ProductController {
             order
         });
 
-        responseHandler(res, products, {page:+page});
+        responseHandler(res, products, {page:+page,
+            totalPages:Math.ceil(await productService.getAmountOfProducts()/limit)});
     });
 
     createOne = asyncHandler(async (req, res, next) => {
