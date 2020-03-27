@@ -29,7 +29,6 @@ class UsersService {
     }
 
     async createOne(userData) {
-        console.log(UserModel);
         const existingUser = await UserModel.findOne({
             where: { email: userData.email }
         });

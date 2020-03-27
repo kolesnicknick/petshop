@@ -5,10 +5,9 @@ const sequelize = require('../../db');
 class Account extends Model {}
 
 const AccountModel = Account.init({
-    id: { type: DataTypes.INTEGER, primaryKey: true, allowNull: false, autoIncrement:true, },
+    id: { type: DataTypes.UUID, primaryKey: true, allowNull: false },
     userType: { type: DataTypes.ENUM, values: ["admin", "provider", "default"] },
     balance: {type: DataTypes.INTEGER, allowNull: false},
-    userId: {type:DataTypes.INTEGER, allowNull:false, unique:true}
 }, { sequelize, modelName: 'Account' });
 
 console.log(sequelize.models);

@@ -2,21 +2,33 @@ const {UserModel} = require ('../../../modules/users/user.model');
 const userService = require ('../../../modules/users/user.service');
 const {AccountModel} = require ('../../../modules/accounts/account.model');
 const {ProductModel} = require ('../../../modules/products/product.model');
-const data = require('./pets');
+const pets = require('./pets');
+const uuid = require('uuid/v1');
+
+let adminID = uuid();
+let createAdmin = async ()=>{
+
+    await userService.createOne({
+        id: adminID,
+        firstName: "Niko",
+        lastName: "Kole",
+        email: "kolesniknikolai92@gmail.com",
+        password: "Password1",
+    });
+
+    AccountModel.create({
+        id: uuid(),
+        balance: 1000,
+        UserId: adminID,
+        userType: 'admin'
+    });
+};
+
+createAdmin();
 
 
-userService.createOne({
-    firstName: "Niko",
-    lastName: "Kole",
-    email: "kolesniknikolai92@gmail.com",
-    password: "Password1",
-}).then(user => {AccountModel.create({
-    balance: 1000,
-    userId: user.id,
-    userType: 'admin'
-}).then(console.log);});
 
-data.data.forEach(entry => {
+pets.forEach(entry => {
     const product = ProductModel.create(
         entry
     );

@@ -16,10 +16,9 @@ const ProductModel = Product.init({
     breed: {type: DataTypes.STRING, allowNull:true},
     temper: {type: DataTypes.STRING, allowNull:true},
     imageSrc: {type: DataTypes.STRING, allowNull:true},
-    UserId: {type: DataTypes.INTEGER, defaultValue: 1, allowNull:false},
     isSold: {
         type: DataTypes.BOOLEAN, default: false
     }
-}, {sequelize, modelName: 'Product'});
+}, {sequelize, modelName: 'Product', });
 
 module.exports = { ProductModel } ;
