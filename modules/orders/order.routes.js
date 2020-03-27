@@ -4,9 +4,7 @@ const { Router } = require('express');
 
 const router = new Router();
 
-router.post('/one', auth, orderController.createOne);
-
-router.post('/many', auth, orderController.createMany);
+router.post('/', auth, orderController.createMany);
 
 router.get('/history', orderController.getAll);
 

@@ -1,4 +1,5 @@
 const { ProductModel } = require('./product.model');
+const userService = require('../users/user.service');
 const { BadRequest, NotFound } = require('../../common/exceptions/facade');
 
 class ProductService {
@@ -32,7 +33,8 @@ class ProductService {
     }
 
     async createOne({ name, species, price, gender, weight, birth_date, color, breed, temper }) {
-        const productModel = new ProductModel({ name, species, price, gender, weight, birth_date, color, breed, temper, UserId:1, isSold: false});
+        let user = await userService.findOneByEmail('kolesniknikolai92@gmail.com');
+        const productModel = new ProductModel({ name, species, price, gender, weight, birth_date, color, breed, temper, UserId:user.id, isSold: false});
         return await productModel.save();
     }
 

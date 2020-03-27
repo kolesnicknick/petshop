@@ -7,20 +7,20 @@ class AccountService {
         return AccountModel.findAll();
     }
 
-    async findOneByUserId(userID) {
-        const account = await AccountModel.findOne({where: {userID}});
+    async findOneByUserId(UserId) {
+        const account = await AccountModel.findOne({where: {UserId}});
 
         if (!account) {
-            throw new NotFound(`Account with userID ${userID} not found`);
+            throw new NotFound(`Account with userID ${UserId} not found`);
         }
 
         return account;
     }
 
-    async createOne({balance, userID, userType}) {
+    async createOne({balance, UserID, userType}) {
         return await AccountModel.create({
             balance,
-            userID,
+            UserID,
             userType,
         })
     }

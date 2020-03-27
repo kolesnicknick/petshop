@@ -15,6 +15,7 @@ class OrderController {
     });
 
     createMany = asyncHandler(async (req, res, next) => {
+
         let products = req.body.products;
         let acceptedOrders = [];
 
