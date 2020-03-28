@@ -25,14 +25,13 @@ class AccountService {
         })
     }
 
-    async updateOne(id, accountData) {
-        await this.findOneById(id);
-        await AccountModel.update(accountData, {where: {id}});
-        return this.findOneById(id);
+    async updateBalance(id, balanceDelta, transaction) {
+        let account = await this.findOneByUserId(id);
+        return await AccountModel.update({balance: account.balance+balanceDelta}, {where: {id: account.id}, transaction});
     }
 
     async removeOne(id) {
-        const account = await this.findOneById(id);
+        const account = await this.findOneByUserId(id);
         account.destroy();
         return {id: account.id};
     }

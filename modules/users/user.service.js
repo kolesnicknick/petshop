@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
-const { UserModel } = require('./user.model');
-const { BadRequest, NotFound } = require('../../common/exceptions/facade');
+const {UserModel} = require('./user.model');
+const {BadRequest, NotFound} = require('../../common/exceptions/facade');
 
 class UsersService {
 
@@ -8,8 +8,8 @@ class UsersService {
         return UserModel.findAll();
     }
 
-    async findOneById(id) {
-        const user = await UserModel.findOne({ where: { id } });
+    async findOneById(id, transaction) {
+        const user = await UserModel.findOne({where: {id}}, transaction);
 
         if (!user) {
             throw new NotFound('User not found');
@@ -19,7 +19,7 @@ class UsersService {
     }
 
     async findOneByEmail(email) {
-        const user = await UserModel.findOne({ where: { email } });
+        const user = await UserModel.findOne({where: {email}});
 
         if (!user) {
             throw new NotFound('User not found');
@@ -29,8 +29,14 @@ class UsersService {
     }
 
     async createOne(userData) {
+
+        return sequelize.transaction(async transaction => {
+            //create user
+
+            //create account with link to user
+        });
         const existingUser = await UserModel.findOne({
-            where: { email: userData.email }
+            where: {email: userData.email}
         });
 
         if (existingUser) {
@@ -45,14 +51,14 @@ class UsersService {
 
     async updateOne(id, userData) {
         await this.findOneById(id);
-        await UserModel.update(userData, { where: { id } });
+        await UserModel.update(userData, {where: {id}});
         return this.findOneById(id);
     }
 
     async removeOne(id) {
         const user = await this.findOneById(id);
         user.destroy();
-        return { id: user.id };
+        return {id: user.id};
     }
 }
 

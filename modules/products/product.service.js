@@ -12,24 +12,14 @@ class ProductService {
         return ProductModel.count();
     }
 
-    async findOneById(id) {
-        const product = await ProductModel.findOne({ where: { id } });
+    async findOneById(id, transaction) {
+        const product = await ProductModel.findOne({ where: { id }, transaction });
 
         if (!product) {
             throw new NotFound('User not found');
         }
 
         return product;
-    }
-
-    async findOneByEmail(id) {
-        const user = await ProductModel.findOne({ where: { id } });
-
-        if (!user) {
-            throw new NotFound('User not found');
-        }
-
-        return user;
     }
 
     async createOne({ name, species, price, gender, weight, birth_date, color, breed, temper }) {
