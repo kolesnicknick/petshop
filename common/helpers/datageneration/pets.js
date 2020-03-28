@@ -14,7 +14,7 @@ const pets =
                     "breed": "the_cavalier_king_kharles_spaniel",
                     "is_sterile": false,
                     "hair": "long",
-                    "imageSrc": "public/images/image_1.jpg"
+                    "imageSrc": "images/image_1.jpg"
                 },
 
                 {
@@ -23,7 +23,7 @@ const pets =
                     "name": "lucky",
                     "price": 1800,
                     "gender": "male",
-                    "imageSrc": "public/images/image_2.jpg",
+                    "imageSrc": "images/image_2.jpg",
                     "weight": 30,
                     "birth_date": 1577904086,
                     "color": "golden",
@@ -37,7 +37,7 @@ const pets =
                     "name": "simba",
                     "price": 1500,
                     "gender": "male",
-                    "imageSrc": "public/images/image_3.jpg",
+                    "imageSrc": "images/image_3.jpg",
 
                     "weight": 10,
                     "birth_date": 1577904086,
@@ -53,7 +53,7 @@ const pets =
                     "name": "diamond",
                     "price": 3000,
                     "gender": "female",
-                    "imageSrc": "public/images/image_4.jpg",
+                    "imageSrc": "images/image_4.jpg",
                     "weight":uuid(),
                     "birth_date": 1577904086,
                     "color": "white",
@@ -68,7 +68,7 @@ const pets =
                     "name": "rocky",
                     "price": 1000,
                     "gender": "male",
-                    "imageSrc": "public/images/image_5.jpg",
+                    "imageSrc": "images/image_5.jpg",
                     "weight": 25,
                     "birth_date": 1577904086,
                     "color": "brown",
@@ -83,7 +83,7 @@ const pets =
                     "name": "chester",
                     "price": 1800,
                     "gender": "male",
-                    "imageSrc": "public/images/image_6.jpg",
+                    "imageSrc": "images/image_6.jpg",
                     "weight": 17,
                     "birth_date": 1577904086,
                     "color": "white",
@@ -98,7 +98,7 @@ const pets =
                     "name": "daniella",
                     "price": 2000,
                     "gender": "female",
-                    "imageSrc": "public/images/image_7.jpg",
+                    "imageSrc": "images/image_7.jpg",
                     "weight": 3.2,
                     "birth_date": 1577904086,
                     "color": "golden,black",
@@ -113,7 +113,7 @@ const pets =
                     "name": "jerry",
                     "price": 2000,
                     "gender": "male",
-                    "imageSrc": "public/images/image_8.jpg",
+                    "imageSrc": "images/image_8.jpg",
                     "weight": 25,
                     "birth_date": 1577904086,
                     "color": "white,goldenblack",
@@ -128,7 +128,7 @@ const pets =
                     "name": "benji",
                     "price": 1900,
                     "gender": "male",
-                    "imageSrc": "public/images/image_9.jpg",
+                    "imageSrc": "images/image_9.jpg",
                     "weight": 35,
                     "birth_date": 1577904086,
                     "color": "golden,white",
@@ -143,7 +143,7 @@ const pets =
                     "name": "loki",
                     "price": 2000,
                     "gender": "male",
-                    "imageSrc": "public/images/image_10.jpg",
+                    "imageSrc": "images/image_10.jpg",
                     "weight": 30,
                     "birth_date": 1577904086,
                     "color": "black,brown",
@@ -162,7 +162,7 @@ const pets =
                     "birth_date": 1546293600000,
                     "color": "orange",
                     "breed": "bengal cat",
-                    "imageSrc": "public/images/image_11.jpg",
+                    "imageSrc": "images/image_11.jpg",
                     "is_sterile": false,
                     "hair": "short"
                 },
@@ -175,7 +175,7 @@ const pets =
                     "birth_date": 1530478800000,
                     "color": "gray",
                     "breed": "siamese cat",
-                    "imageSrc": "public/images/image_12.jpg",
+                    "imageSrc": "images/image_12.jpg",
                     "is_sterile": false,
                     "hair": "short"
                 },
@@ -188,7 +188,7 @@ const pets =
                     "birth_date": 1538514000000,
                     "color": "gray",
                     "breed": "british shorthair",
-                    "imageSrc": "public/images/image_13.jpg",
+                    "imageSrc": "images/image_13.jpg",
                     "is_sterile": false,
                     "hair": "short"
                 },
@@ -201,7 +201,7 @@ const pets =
                     "birth_date": 1522789200000,
                     "color": "gray",
                     "breed": "maine coon",
-                    "imageSrc": "public/images/image_14.jpg",
+                    "imageSrc": "images/image_14.jpg",
                     "is_sterile": true,
                     "hair": "long"
                 },
@@ -214,7 +214,7 @@ const pets =
                     "birth_date": 1483567200000,
                     "color": "black",
                     "breed": "siberian husky",
-                    "imageSrc": "public/images/image_15.jpg",
+                    "imageSrc": "images/image_15.jpg",
                     "is_sterile": false,
                     "hair": "short"
                 },
@@ -227,7 +227,7 @@ const pets =
                     "birth_date": 1491426000000,
                     "color": "black",
                     "breed": "yorkshire terrier",
-                    "imageSrc": "public/images/image_16.jpg",
+                    "imageSrc": "images/image_16.jpg",
                     "is_sterile": false,
                     "hair": "long"
                 },
@@ -240,7 +240,7 @@ const pets =
                     "birth_date": 1499374800000,
                     "color": "black",
                     "breed": "dobermann",
-                    "imageSrc": "public/images/image_17.jpg",
+                    "imageSrc": "images/image_17.jpg",
                     "is_sterile": false,
                     "hair": "short"
                 },
@@ -253,7 +253,7 @@ const pets =
                     "birth_date": 1507410000000,
                     "color": "cream",
                     "breed": "pug",
-                    "imageSrc": "public/images/image_18.jpg",
+                    "imageSrc": "images/image_18.jpg",
                     "is_sterile": true,
                     "hair": "short"
                 },
@@ -266,7 +266,7 @@ const pets =
                     "birth_date": 1475960400000,
                     "color": "ginger",
                     "breed": "procyon lotor",
-                    "imageSrc": "public/images/image_19.jpg",
+                    "imageSrc": "images/image_19.jpg",
                     "is_sterile": false,
                     "hair": "long"
                 },
@@ -279,7 +279,7 @@ const pets =
                     "birth_date": 1554843600000,
                     "color": "black",
                     "breed": "raccoon dog",
-                    "imageSrc": "public/images/image_20.jpg",
+                    "imageSrc": "images/image_20.jpg",
                     "is_sterile": false,
                     "hair": "long"
                 },
@@ -294,7 +294,7 @@ const pets =
                     "birth_date": 1579113686,
                     "color": "gray",
                     "breed": "british shorthair",
-                    "imageSrc": "public/images/image_21.jpg",
+                    "imageSrc": "images/image_21.jpg",
                     "is_sterile": false,
                     "hair": "short"
                 },
@@ -308,7 +308,7 @@ const pets =
                     "birth_date": 1577904086,
                     "color": "black",
                     "breed": "beagle",
-                    "imageSrc": "public/images/image_22.jpg",
+                    "imageSrc": "images/image_22.jpg",
                     "is_sterile": true,
                     "hair": "short"
                 },
@@ -322,7 +322,7 @@ const pets =
                     "birth_date": 1559414486,
                     "color": "white",
                     "breed": "chow-chow",
-                    "imageSrc": "public/images/image_23.jpg",
+                    "imageSrc": "images/image_23.jpg",
                     "is_sterile": true,
                     "hair": "short"
                 },
@@ -336,7 +336,7 @@ const pets =
                     "birth_date": 1576348886,
                     "color": "yellow",
                     "breed": "budgerigar",
-                    "imageSrc": "public/images/image_24.jpg",
+                    "imageSrc": "images/image_24.jpg",
                     "is_sterile": false,
                     "hair": "short"
                 },
@@ -350,7 +350,7 @@ const pets =
                     "birth_date": 1577558486,
                     "color": "gold",
                     "breed": "gold fish",
-                    "imageSrc": "public/images/image_25.jpg",
+                    "imageSrc": "images/image_25.jpg",
                     "is_sterile": false,
                     "hair": "short"
                 },
@@ -364,7 +364,7 @@ const pets =
                     "birth_date": 1570300886,
                     "color": "white",
                     "breed": "scottish terrier",
-                    "imageSrc": "public/images/image_26.jpg",
+                    "imageSrc": "images/image_26.jpg",
                     "is_sterile": true,
                     "hair": "long"
                 },
@@ -378,7 +378,7 @@ const pets =
                     "birth_date": 1505932886,
                     "color": "gray",
                     "breed": "british cat",
-                    "imageSrc": "public/images/image_27.jpg",
+                    "imageSrc": "images/image_27.jpg",
                     "is_sterile": true,
                     "hair": "long"
                 },
@@ -392,7 +392,7 @@ const pets =
                     "birth_date": 1513795286,
                     "color": "green",
                     "breed": "budgerigar",
-                    "imageSrc": "public/images/image_28.jpg",
+                    "imageSrc": "images/image_28.jpg",
                     "is_sterile": false,
                     "hair": "short"
                 },
@@ -406,7 +406,7 @@ const pets =
                     "birth_date": 1413830486,
                     "color": "gray",
                     "breed": "african elephant",
-                    "imageSrc": "public/images/image_29.jpg",
+                    "imageSrc": "images/image_29.jpg",
                     "is_sterile": true,
                     "hair": "short"
                 },
@@ -420,7 +420,7 @@ const pets =
                     "birth_date": 1476988886,
                     "color": "pink",
                     "breed": "mouse",
-                    "imageSrc": "public/images/image_30.jpg",
+                    "imageSrc": "images/image_30.jpg",
                     "is_sterile": true,
                     "hair": "short"
                 },
@@ -435,7 +435,7 @@ const pets =
                     "birth_date": 1582222400000,
                     "color": "gray-white",
                     "breed": "Hypancistrus",
-                    "imageSrc": "public/images/image_31.jpg",
+                    "imageSrc": "images/image_31.jpg",
                     "water_type": "limnetic",
                     "temper": "predator"
                 },
@@ -448,7 +448,7 @@ const pets =
                     "birth_date": 1584222400000,
                     "color": "black-red",
                     "breed": "Panaqolus",
-                    "imageSrc": "public/images/image_32.jpg",
+                    "imageSrc": "images/image_32.jpg",
                     "water_type": "limnetic",
                     "temper": "predator"
                 },
@@ -461,7 +461,7 @@ const pets =
                     "birth_date": 1583022400000,
                     "color": "blue",
                     "breed": "Microrasbora erythromicron",
-                    "imageSrc": "public/images/image_33.jpg",
+                    "imageSrc": "images/image_33.jpg",
                     "water_type": "limnetic",
                     "temper": "peacefull"
                 },
@@ -474,7 +474,7 @@ const pets =
                     "birth_date": 1581022400000,
                     "color": "yellow",
                     "breed": "Trigonostigma heteromorpha",
-                    "imageSrc": "public/images/image_34.jpg",
+                    "imageSrc": "images/image_34.jpg",
                     "water_type": "limnetic",
                     "temper": "predator"
                 },
@@ -487,7 +487,7 @@ const pets =
                     "birth_date": 1583222400000,
                     "color": "blue-yellow",
                     "breed": "Melanotaenia boesemani",
-                    "imageSrc": "public/images/image_35.jpg",
+                    "imageSrc": "images/image_35.jpg",
                     "water_type": "limnetic",
                     "temper": "predator"
                 },
@@ -500,7 +500,7 @@ const pets =
                     "birth_date": 1578543600000,
                     "color": "yellow",
                     "breed": "Pseudomugil furcatus",
-                    "imageSrc": "public/images/image_36.jpg",
+                    "imageSrc": "images/image_36.jpg",
                     "water_type": "limnetic",
                     "temper": "predator"
                 },
@@ -513,7 +513,7 @@ const pets =
                     "birth_date": 1554843600000,
                     "color": "white",
                     "breed": "Pterophyllum scalare",
-                    "imageSrc": "public/images/image_37.jpg",
+                    "imageSrc": "images/image_37.jpg",
                     "water_type": "limnetic",
                     "temper": "peacefull"
                 },
@@ -526,7 +526,7 @@ const pets =
                     "birth_date": 1579543600000,
                     "color": "blue",
                     "breed": "Aequidens rivulatus",
-                    "imageSrc": "public/images/image_38.jpg",
+                    "imageSrc": "images/image_38.jpg",
                     "water_type": "limnetic",
                     "temper": "predator"
                 },
@@ -539,7 +539,7 @@ const pets =
                     "birth_date": 1582843600000,
                     "color": "red-black",
                     "breed": "Astronotus ocellatus",
-                    "imageSrc": "public/images/image_39.jpg",
+                    "imageSrc": "images/image_39.jpg",
                     "water_type": "limnetic",
                     "temper": "predator"
                 },
@@ -552,7 +552,7 @@ const pets =
                     "birth_date": 1556843600000,
                     "color": "red",
                     "breed": "Hemichromis bimaculatus",
-                    "imageSrc": "public/images/image_40.jpg",
+                    "imageSrc": "images/image_40.jpg",
                     "water_type": "limnetic",
                     "temper": "predator"
                 },
@@ -566,7 +566,7 @@ const pets =
                     "birth_date": 1575842400000,
                     "color": "black",
                     "breed": "doberman",
-                    "imageSrc": "public/images/image_41.jpg",
+                    "imageSrc": "images/image_41.jpg",
                     "is_sterile": false,
                     "hair": "short"
                 },
@@ -579,7 +579,7 @@ const pets =
                     "birth_date": 1575842400000,
                     "color": "golden",
                     "breed": "golden retriever",
-                    "imageSrc": "public/images/image_42.jpg",
+                    "imageSrc": "images/image_42.jpg",
                     "is_sterile": false,
                     "hair": "long"
                 },
@@ -592,7 +592,7 @@ const pets =
                     "birth_date": 1575842400000,
                     "color": "black",
                     "breed": "berner Sennenhund",
-                    "imageSrc": "public/images/image_43.jpg",
+                    "imageSrc": "images/image_43.jpg",
                     "is_sterile": false,
                     "hair": "lonk"
                 },
@@ -605,7 +605,7 @@ const pets =
                     "birth_date": 1575842400000,
                     "color": "brown",
                     "breed": "Beagle",
-                    "imageSrc": "public/images/image_44.jpg",
+                    "imageSrc": "images/image_44.jpg",
                     "is_sterile": false,
                     "hair": "short"
                 },
@@ -618,7 +618,7 @@ const pets =
                     "birth_date": 1575842400000,
                     "color": "golden",
                     "breed": "mops",
-                    "imageSrc": "public/images/image_45.jpg",
+                    "imageSrc": "images/image_45.jpg",
                     "is_sterile": false,
                     "hair": "short"
                 },
@@ -631,7 +631,7 @@ const pets =
                     "birth_date": 1575842400000,
                     "color": "gray",
                     "breed": "Cane corso",
-                    "imageSrc": "public/images/image_46.jpg",
+                    "imageSrc": "images/image_46.jpg",
                     "is_sterile": false,
                     "hair": "short"
                 },
@@ -644,7 +644,7 @@ const pets =
                     "birth_date": 1575842400000,
                     "color": "black",
                     "breed": "Rottweiler",
-                    "imageSrc": "public/images/image_47.jpg",
+                    "imageSrc": "images/image_47.jpg",
                     "is_sterile": false,
                     "hair": "middle"
                 },
@@ -657,7 +657,7 @@ const pets =
                     "birth_date": 1575842400000,
                     "color": "white-brown",
                     "breed": "Akita",
-                    "imageSrc": "public/images/image_48.jpg",
+                    "imageSrc": "images/image_48.jpg",
                     "is_sterile": false,
                     "hair": "long"
                 },
@@ -670,7 +670,7 @@ const pets =
                     "birth_date": 1575842400000,
                     "color": "brown",
                     "breed": "Rhodesian Ridgeback",
-                    "imageSrc": "public/images/image_49.jpg",
+                    "imageSrc": "images/image_49.jpg",
                     "is_sterile": false,
                     "hair": "short"
                 },
@@ -683,7 +683,7 @@ const pets =
                     "birth_date": 1575842400000,
                     "color": "black",
                     "breed": "Chihuahua",
-                    "imageSrc": "public/images/image_50.jpg",
+                    "imageSrc": "images/image_50.jpg",
                     "is_sterile": false,
                     "hair": "middle"
                 }

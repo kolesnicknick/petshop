@@ -1,5 +1,6 @@
 const { AccountModel } = require('./account.model');
 const {BadRequest, NotFound} = require('../../common/exceptions/facade');
+const { v4: uuid } = require('uuid');
 
 class AccountService {
 
@@ -17,17 +18,19 @@ class AccountService {
         return account;
     }
 
-    async createOne({balance, UserID, userType}) {
-        return await AccountModel.create({
-            balance,
-            UserID,
-            userType,
-        })
+    async createOne({id, balance, UserId, userType}, transaction) {
+        const acc = await AccountModel.create({
+            id: uuid(),
+            balance: balance,
+            UserId: UserId,
+            userType: userType
+        }, {transaction});
+        return acc;
     }
 
     async updateBalance(id, balanceDelta, transaction) {
         let account = await this.findOneByUserId(id);
-        return await AccountModel.update({balance: account.balance+balanceDelta}, {where: {id: account.id}, transaction});
+        return await AccountModel.update({ balance: account.balance+balanceDelta }, {where: {id: account.id}}, { transaction });
     }
 
     async removeOne(id) {

@@ -9,7 +9,6 @@ const router = new Router();
 
 router.get('/', productController.getProducts);
 router.post('/', productController.createOne);
-
 router.get('/:id', createValidator(CreateProductDto),  productController.getProductByID);
 
 module.exports = router;

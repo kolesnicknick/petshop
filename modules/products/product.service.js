@@ -28,9 +28,9 @@ class ProductService {
         return await productModel.save();
     }
 
-    async updateOne(id, productData) {
+    async updateOne(id, productData, transaction) {
         await this.findOneById(id);
-        await ProductModel.update(productData, { where: { id } });
+        await ProductModel.update(productData, { where: { id }}, {transaction} );
         return this.findOneById(id);
     }
 

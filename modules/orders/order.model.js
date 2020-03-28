@@ -10,4 +10,4 @@ const OrderModel = Order.init({
     buyerId: {type: DataTypes.UUID,  allowNull: false}
 }, {sequelize, modelName: 'Order'});
 
-module.exports = { ProductModel } ;
+module.exports = { OrderModel } ;

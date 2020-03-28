@@ -25,7 +25,7 @@ app.use('/auth', authRouter);
 app.use('/products', productsRouter);
 
 app.use(errorHandler);
- // sequelize.sync().then(require('./common/helpers/datageneration/dbgenerator'));
+// sequelize.sync().then(require('./common/helpers/datageneration/dbgenerator'));
 
 app.listen(54322, () => console.log('Server is started'));
 
