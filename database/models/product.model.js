@@ -1,5 +1,5 @@
 const { DataTypes, Model} = require('sequelize');
-const sequelize = require('../../db');
+const sequelize = require('../db');
 
 class Product extends Model {
 }
@@ -19,6 +19,6 @@ const ProductModel = Product.init({
     isSold: {
         type: DataTypes.BOOLEAN, default: false
     }
-}, {sequelize, modelName: 'Product', });
+}, {sequelize, modelName: 'Product'});
 
 module.exports = { ProductModel } ;

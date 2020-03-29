@@ -8,7 +8,6 @@ const pets =
                     "price": 1200,
                     "gender": "male",
                     "weight": 5.9,
-
                     "birth_date": 1577904086,
                     "color": "blenheim,black,ruby",
                     "breed": "the_cavalier_king_kharles_spaniel",

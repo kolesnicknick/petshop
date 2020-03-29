@@ -1,6 +1,6 @@
 const { DataTypes, Model } = require('sequelize');
-const { UserModel } =  require('../users/user.model');
-const sequelize = require('../../db');
+const { UserModel } =  require('./user.model');
+const sequelize = require('../db');
 const { v1: uuid } = require('uuid');
 
 class Account extends Model {}

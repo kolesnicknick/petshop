@@ -1,12 +1,22 @@
 {
-  "db": {
-    "name": "petshop",
-    "user": "postgres",
+
+  "development": {
+    "database": "my_database",
+    "username": "postgres",
     "password": "password",
     "host": "127.0.0.1",
     "port": 54320,
     "dialect": "postgres"
   },
+
+  "db": {
+  "name": "petshop",
+  "user": "postgres",
+  "password": "password",
+  "host": "127.0.0.1",
+  "port": 54320,
+  "dialect": "postgres"
+},
   "auth": {
     "secretKey": "alakhamora",
     "expiresIn": 360000

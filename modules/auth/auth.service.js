@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const {auth} = require('../../config');
+const {auth} = require('../../database/config/config');
 const {BadRequest} = require('../../common/exceptions/facade');
 const usersService = require('../users/user.service');
 const usersController = require('../users/user.controller');

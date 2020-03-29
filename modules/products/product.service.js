@@ -1,4 +1,4 @@
-const { ProductModel } = require('./product.model');
+const { ProductModel } = require('../../database/models/product.model');
 const userService = require('../users/user.service');
 const { BadRequest, NotFound } = require('../../common/exceptions/facade');
 

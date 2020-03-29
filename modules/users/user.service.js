@@ -1,8 +1,8 @@
 const bcrypt = require('bcrypt');
-const {UserModel} = require('./user.model');
+const {UserModel} = require('../../database/models/user.model');
 const accountService = require('../accounts/account.service');
 const {BadRequest, NotFound} = require('../../common/exceptions/facade');
-const sequelize = require('../../db');
+const sequelize = require('../../database/db');
 const { v4: uuid } = require('uuid');
 
 class UsersService {

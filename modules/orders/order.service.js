@@ -1,12 +1,12 @@
 
-const {ProductModel} = require('../products/product.model');
-const { OrderModel } = require('./order.model');
+const {ProductModel} = require('../../database/models/product.model');
+const { OrderModel } = require('../../database/models/order.model');
 
 const userService = require('../users/user.service');
 const productService = require('../products/product.service');
 const accountService = require('../accounts/account.service');
 const {BadRequest, NotFound} = require('../../common/exceptions/facade');
-const sequelize = require('../../db');
+const sequelize = require('../../database/db');
 
 class OrderService {
 

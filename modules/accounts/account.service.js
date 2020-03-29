@@ -1,4 +1,4 @@
-const { AccountModel } = require('./account.model');
+const { AccountModel } = require('../../database/models/account.model');
 const {BadRequest, NotFound} = require('../../common/exceptions/facade');
 const { v4: uuid } = require('uuid');
 

@@ -1,5 +1,5 @@
 const passport = require('passport');
-const { auth } = require('../../config');
+const { auth } = require('../../database/config/config');
 const { Strategy, ExtractJwt } = require('passport-jwt');
 const { Unauthorized } = require('../../common/exceptions/facade');
 const usersService = require('../users/user.service');

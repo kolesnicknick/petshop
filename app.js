@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
-const sequelize = require('./db');
+const sequelize = require('./database/db');
 const errorHandler =  require('./common/middlewares/errors.middleware');
 let usersRouter = require('./modules/users/user.routes');
 let authRouter = require('./modules/auth/auth.rotues');
@@ -27,7 +27,6 @@ app.use('/products', productsRouter);
 app.use('/orders', ordersRouter);
 
 app.use(errorHandler);
-// sequelize.sync().then(require('./common/helpers/datageneration/dbgenerator'));
 
 app.listen(54322, () => console.log('Server is started'));
 
