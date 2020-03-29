@@ -1,4 +1,5 @@
 const orderController = require('./order.controller');
+const auth = require('../../common/middlewares/auth.middleware');
 
 const { Router } = require('express');
 

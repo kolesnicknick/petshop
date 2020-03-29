@@ -13,7 +13,7 @@ class ProductService {
     }
 
     async findOneById(id, transaction) {
-        const product = await ProductModel.findOne({ where: { id }, transaction });
+        const product = await ProductModel.findOne({ where: { id }}, { transaction } );
 
         if (!product) {
             throw new NotFound('User not found');

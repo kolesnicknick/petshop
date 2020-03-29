@@ -15,12 +15,9 @@ class OrderController {
     });
 
     createMany = asyncHandler(async (req, res, next) => {
-
         let products = req.body.products;
-        let acceptedOrders = [];
-
-        await orders.forEach(product => {orderService.createOne(product, req.user)});
-        responseHandler(res, order);
+        let acceptedOrders =  await orderService.applyOrdersOnMany(req.user.dataValues.id, products)
+        responseHandler(res, acceptedOrders);
     });
 
     userOrders = asyncHandler(async (req, res, next) => {

@@ -6,6 +6,7 @@ const errorHandler =  require('./common/middlewares/errors.middleware');
 let usersRouter = require('./modules/users/user.routes');
 let authRouter = require('./modules/auth/auth.rotues');
 let productsRouter = require('./modules/products/product.routes');
+let ordersRouter = require('./modules/orders/order.routes');
 let app = express();
 const xss = require('xss-clean');
 const rateLimit = require('express-rate-limit');
@@ -23,6 +24,7 @@ require('./modules/auth/jwt.strategy');
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/products', productsRouter);
+app.use('/orders', ordersRouter);
 
 app.use(errorHandler);
 // sequelize.sync().then(require('./common/helpers/datageneration/dbgenerator'));
