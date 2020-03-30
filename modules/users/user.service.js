@@ -52,16 +52,11 @@ class UsersService {
             //create account with link to user
             console.log(`Creating account for user with data: `+userModel.dataValues.id);
             const account = await accountService.createOne({id:userId, UserId: userModel.dataValues.id, userType: "default", balance: 1000}, transaction);
-
-            userModel.account = account;
-            return userModel;
+            userModel.password = await bcrypt.hash(userData.password, 10);
+            const userReturnData = (await userModel.save()).dataValues;
+            userReturnData.account = account.dataValues;
+            return userReturnData;
         });
-
-
-        const userModel = new UserModel(userData);
-        userModel.password = await bcrypt.hash(userData.password, 10);
-        const savedUser = await userModel.save();
-        return savedUser;
     }
 
     async updateOne(id, userData) {

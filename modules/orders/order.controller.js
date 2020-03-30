@@ -2,28 +2,22 @@ const orderService = require('./order.service');
 const asyncHandler = require('../../common/helpers/async.handler');
 const responseHandler = require('../../common/helpers/response.handler');
 
+
 class OrderController {
-    getAll = asyncHandler(async (req, res, next) => {
-        const orders = await orderService.findMany();
+    history = asyncHandler(async (req, res, next) => {
+        const orders = await orderService.orderHistory();
 
         responseHandler(res, orders);
     });
 
-    createOne = asyncHandler(async (req, res, next) => {
-        const order = await orderService.createOne(req.body);
-        responseHandler(res, order);
-    });
-
     createMany = asyncHandler(async (req, res, next) => {
         let products = req.body.products;
-        let acceptedOrders =  await orderService.applyOrdersOnMany(req.user.dataValues.id, products)
+        let acceptedOrders =  await orderService.applyOrderOnMany(req.user.dataValues.id, products);
         responseHandler(res, acceptedOrders);
     });
 
     userOrders = asyncHandler(async (req, res, next) => {
-        const orders = await orderService.findMany({
-            where: {buyerId : req.user.id}
-        });
+        const orders = await orderService.myHistory();
         responseHandler(res, orders);
     });
 }

@@ -29,5 +29,5 @@ app.use('/orders', ordersRouter);
 app.use(errorHandler);
 
 app.listen(54322, () => console.log('Server is started'));
-
+// require('./database/dbgenerator');
 module.exports = app;

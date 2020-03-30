@@ -1,6 +1,7 @@
 const { ProductModel } = require('../../database/models/product.model');
 const userService = require('../users/user.service');
 const { BadRequest, NotFound } = require('../../common/exceptions/facade');
+const { v1: uuid } = require('uuid');
 
 class ProductService {
 
@@ -24,11 +25,12 @@ class ProductService {
 
     async createOne({ name, species, price, gender, weight, birth_date, color, breed, temper }) {
         let user = await userService.findOneByEmail('kolesniknikolai92@gmail.com');
-        const productModel = new ProductModel({ name, species, price, gender, weight, birth_date, color, breed, temper, UserId:user.id, isSold: false});
+        const productModel = new ProductModel({id: uuid(), name, species, price, gender, weight, birth_date, color, breed, temper, UserId:user.id, isSold: false});
         return await productModel.save();
     }
 
     async updateOne(id, productData, transaction) {
+        //TODO update
         await this.findOneById(id);
         await ProductModel.update(productData, { where: { id }}, {transaction} );
         return this.findOneById(id);
