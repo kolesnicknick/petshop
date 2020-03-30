@@ -12,7 +12,7 @@ const users = [
         id: uuid(),
         firstName: "Brad",
         lastName: "Traversy",
-        emails: "mail2@gmail.com",
+        email: "mail2@gmail.com",
         password: "Password",
     },
     {

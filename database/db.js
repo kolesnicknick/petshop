@@ -1,10 +1,13 @@
 const { Sequelize } = require('sequelize');
-const { development:db } = require('./config/config.json');
+const { db:db } = require('./config/config.json');
 
 const sequelize = new Sequelize(db.name, db.user, db.password, {
     host: db.host,
     port: db.port,
     dialect: db.dialect,
+    dialectOptions:{
+        supportBigNumbers:true
+    }
 });
 
 sequelize

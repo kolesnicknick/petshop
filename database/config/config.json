@@ -1,29 +1,27 @@
 {
-
   "development": {
-    "database": "my_database",
+    "database": "petshop",
     "username": "postgres",
     "password": "password",
     "host": "127.0.0.1",
     "port": 54320,
     "dialect": "postgres"
   },
-
   "db": {
-  "name": "petshop",
-  "user": "postgres",
-  "password": "password",
-  "host": "127.0.0.1",
-  "port": 54320,
-  "dialect": "postgres"
-},
+    "name": "petshop",
+    "user": "postgres",
+    "password": "password",
+    "host": "127.0.0.1",
+    "port": 54320,
+    "dialect": "postgres"
+  },
   "auth": {
     "secretKey": "alakhamora",
     "expiresIn": 360000
   },
   "mail": {
-    "email":"petshop.node@gmail.com",
-    "password":"Petshop1",
+    "email": "petshop.node@gmail.com",
+    "password": "Petshop1",
     "type": "gmail"
   }
 }

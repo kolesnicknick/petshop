@@ -11,11 +11,22 @@ const ProductModel = Product.init({
     price: {type: DataTypes.DOUBLE, allowNull: false},
     gender: {type: DataTypes.STRING, allowNull: true},
     weight: {type: DataTypes.DOUBLE, allowNull: true},
-    birth_date: {type: DataTypes.DATE, allowNull: true},
+    birth_date: {type: DataTypes.BIGINT, allowNull: true},
     color: {type: DataTypes.STRING, allowNull:true},
     breed: {type: DataTypes.STRING, allowNull:true},
     temper: {type: DataTypes.STRING, allowNull:true},
+    is_sterile: {type: DataTypes.BOOLEAN, allowNull:true},
     imageSrc: {type: DataTypes.STRING, allowNull:true},
+    hair: { type: DataTypes.ENUM, values: ["long", "short"] },
+    UserId: {
+        type: DataTypes.UUID,
+        references:{
+            model: {
+                tableName: 'Users',
+            },
+            key: 'id',
+        }
+    },
     isSold: {
         type: DataTypes.BOOLEAN, default: false
     }

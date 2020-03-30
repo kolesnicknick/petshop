@@ -28,7 +28,7 @@ const pets =
                     "color": "golden",
                     "breed": "golden_retrieverel",
                     "is_sterile": false,
-                    "hair": "long-coated"
+                    "hair": "long"
                 },
                 {
                     "id": uuid(),
@@ -53,12 +53,12 @@ const pets =
                     "price": 3000,
                     "gender": "female",
                     "imageSrc": "images/image_4.jpg",
-                    "weight":uuid(),
+                    "weight":4,
                     "birth_date": 1577904086,
                     "color": "white",
                     "breed": "bichon_frise",
                     "is_sterile": false,
-                    "hair": "curly"
+                    "hair": "long"
                 },
 
                 {
@@ -435,7 +435,6 @@ const pets =
                     "color": "gray-white",
                     "breed": "Hypancistrus",
                     "imageSrc": "images/image_31.jpg",
-                    "water_type": "limnetic",
                     "temper": "predator"
                 },
                 {
@@ -448,7 +447,6 @@ const pets =
                     "color": "black-red",
                     "breed": "Panaqolus",
                     "imageSrc": "images/image_32.jpg",
-                    "water_type": "limnetic",
                     "temper": "predator"
                 },
                 {
@@ -461,7 +459,6 @@ const pets =
                     "color": "blue",
                     "breed": "Microrasbora erythromicron",
                     "imageSrc": "images/image_33.jpg",
-                    "water_type": "limnetic",
                     "temper": "peacefull"
                 },
                 {
@@ -474,7 +471,6 @@ const pets =
                     "color": "yellow",
                     "breed": "Trigonostigma heteromorpha",
                     "imageSrc": "images/image_34.jpg",
-                    "water_type": "limnetic",
                     "temper": "predator"
                 },
                 {
@@ -487,7 +483,6 @@ const pets =
                     "color": "blue-yellow",
                     "breed": "Melanotaenia boesemani",
                     "imageSrc": "images/image_35.jpg",
-                    "water_type": "limnetic",
                     "temper": "predator"
                 },
                 {
@@ -500,7 +495,6 @@ const pets =
                     "color": "yellow",
                     "breed": "Pseudomugil furcatus",
                     "imageSrc": "images/image_36.jpg",
-                    "water_type": "limnetic",
                     "temper": "predator"
                 },
                 {
@@ -513,7 +507,6 @@ const pets =
                     "color": "white",
                     "breed": "Pterophyllum scalare",
                     "imageSrc": "images/image_37.jpg",
-                    "water_type": "limnetic",
                     "temper": "peacefull"
                 },
                 {
@@ -526,7 +519,6 @@ const pets =
                     "color": "blue",
                     "breed": "Aequidens rivulatus",
                     "imageSrc": "images/image_38.jpg",
-                    "water_type": "limnetic",
                     "temper": "predator"
                 },
                 {
@@ -539,7 +531,6 @@ const pets =
                     "color": "red-black",
                     "breed": "Astronotus ocellatus",
                     "imageSrc": "images/image_39.jpg",
-                    "water_type": "limnetic",
                     "temper": "predator"
                 },
                 {
@@ -552,7 +543,6 @@ const pets =
                     "color": "red",
                     "breed": "Hemichromis bimaculatus",
                     "imageSrc": "images/image_40.jpg",
-                    "water_type": "limnetic",
                     "temper": "predator"
                 },
 
@@ -593,7 +583,7 @@ const pets =
                     "breed": "berner Sennenhund",
                     "imageSrc": "images/image_43.jpg",
                     "is_sterile": false,
-                    "hair": "lonk"
+                    "hair": "long"
                 },
                 {
                     "id": uuid(),
@@ -645,7 +635,7 @@ const pets =
                     "breed": "Rottweiler",
                     "imageSrc": "images/image_47.jpg",
                     "is_sterile": false,
-                    "hair": "middle"
+                    "hair": "long"
                 },
                 {
                     "id": uuid(),
@@ -684,7 +674,7 @@ const pets =
                     "breed": "Chihuahua",
                     "imageSrc": "images/image_50.jpg",
                     "is_sterile": false,
-                    "hair": "middle"
+                    "hair": "short"
                 }
             ];
 
