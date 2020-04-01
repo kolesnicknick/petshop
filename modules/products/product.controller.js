@@ -3,11 +3,20 @@ const asyncHandler = require('../../common/helpers/async.handler');
 const responseHandler = require('../../common/helpers/response.handler');
 
 class ProductController {
-    getProducts = asyncHandler(async (req, res, next) => {
-        const products = await productService.findMany(req.query);
+    getCategories = asyncHandler(async (req, res, next) => {
+        const categories = Array.from(new Set((await productService.getCategories()).map(i => i.species)));
+        responseHandler(res, categories);
+    });
 
-        responseHandler(res, products, {page:+req.query.page,
-            totalPages:Math.ceil(await productService.getAmountOfProducts()/req.query.limit)});
+    getProductsNotSold = asyncHandler(async (req, res, next) => {
+        const products = (await productService.findMany(req.query));
+        const productsFiltered = products.filter(product => (product.isSold == null || product.isSold === false));
+        const limit = req.query.limit || 10;
+        const pages = productsFiltered.length / limit;
+        responseHandler(res, productsFiltered, {
+            page: +req.query.page,
+            totalPages: Math.ceil(pages)
+        });
     });
 
     createOne = asyncHandler(async (req, res, next) => {
