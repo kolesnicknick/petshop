@@ -2,10 +2,12 @@ const { ProductModel } = require('../../database/models/product.model');
 const userService = require('../users/user.service');
 const { BadRequest, NotFound } = require('../../common/exceptions/facade');
 const { v1: uuid } = require('uuid');
+const queryMapper = require('./ProductsQueryMapper');
 
 class ProductService {
 
-    async findMany(params) {
+    async findMany(query) {
+       let params = queryMapper.startFrom(query).withSold(false).build();
         return ProductModel.findAll(params);
     }
 
@@ -30,7 +32,6 @@ class ProductService {
     }
 
     async updateOne(id, productData, transaction) {
-        //TODO update
         await this.findOneById(id);
         await ProductModel.update(productData, { where: { id }}, {transaction} );
         return this.findOneById(id);

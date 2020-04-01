@@ -21,10 +21,8 @@ class UsersController {
     });
 
     findMe = asyncHandler(async (req, res, next) => {
-        const id = req.user.id;
-        console.log(req);
-        const user = await usersService.findOneById(id);
-        user.account = await accountService.findOneByUserId(id);
+
+        const user = await usersService.findMe(req.user.id, null);
         responseHandler(res, user);
     });
 

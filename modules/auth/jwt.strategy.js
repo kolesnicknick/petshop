@@ -14,7 +14,7 @@ const opts = {
 const strategy = new Strategy(opts, async (jwtPayload, done) => {
     console.log(jwtPayload);
     try {
-            const user = await usersService.findOneById(jwtPayload.id);
+            const user = await usersService.findMe(jwtPayload.id);
         if (user) {
             done(null, user);
         } else {

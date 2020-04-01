@@ -9,7 +9,10 @@ class AuthService {
     async login({email, password}) {
         const user = await usersService.findOneByEmail(email);
 
+
         if (!bcrypt.compareSync(password, user.password)) {
+            console.log(password);
+            console.log(user.password);
             throw new BadRequest('Wrong password');
         }
         const token = jwt.sign({ id: user.id, email: user.email }, auth.secretKey);

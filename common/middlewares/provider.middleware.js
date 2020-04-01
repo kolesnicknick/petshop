@@ -1,9 +1,8 @@
 const {Unauthorized} = require("../exceptions/facade");
 module.exports = (req, res, next) => {
-        if (!user.isProvider()) {
-            return next(new Unauthorized('Invalid jwt token'));
+        if ((req.user.account.type === 'default')) {
+            return next(new Unauthorized('You should be a provider or admin to perform this action'));
         } else {
             next();
         }
-    authMiddleWare(req, res, next);
 };

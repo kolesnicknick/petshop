@@ -5,7 +5,7 @@ const users = [
         id: uuid(),
         firstName: "Niko",
         lastName: "Kole",
-        email: "mail1@gmail.com",
+        email: "kolesniknikolai92@gmail.com",
         password: "Password",
     },
     {

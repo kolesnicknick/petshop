@@ -43,43 +43,19 @@ class OrderService {
                 // make pet sold
                 await productService.updateOne(product.id, {isSold: true}, transaction);
                 // create order instance
-                return OrderModel.create({id: uuid(), productId : product.id, buyerId}, {transaction});
+                return OrderModel.create({id: uuid(), sellerId: product.UserId, productId : product.id, buyerId}, {transaction});
             }));
             return productItems;
         });
     }
 
     async orderHistory(){
-        let toReturn = {};
-
-        // Get orders (json)
-        let orders = await OrderModel.findAll({attributes: ['productId', 'buyerId']});
-        console.log(orders);
-        // Get Products (json)
-        let products = (await ProductModel.findAll({
-            where: { id: { [Op.in]: orders.map(i => i.productId) } },
-            attributes:['UserId', 'species', 'breed', 'price']
-        })).dataValues;
-        console.log(products);
-
-        // Get sellers: Name + Last name
-        let sellers = (await UserModel.findAll({
-            where: { id: { [Op.in]: orders.map(i => i.productId) } },
-            attributes:['id', 'firstName', 'lastName', 'email']
-        })).dataValues;
-
-        console.log(sellers);
-
-        // Get buyers: Name + Last name
-        let buyers = (await UserModel.findAll({
-            where: { id: { [Op.in]: orders.map(i => orders.buyerId) } },
-            attributes:['id', 'firstName', 'lastName', 'email']
-        })).dataValues;
-        console.log(buyers);
-
-        //TODO: finish
-        // Create full JSON
-        return toReturn;
+        return OrderModel.findAll({
+            include: [
+                { model: UserModel, as: 'buyer', attributes: ['firstName'] },
+                { model: UserModel, as: 'seller', attributes: ['firstName'] },
+                { model: ProductModel, as: 'product', attributes: ['price'] }]
+        });
     }
 
     async myHistory(){

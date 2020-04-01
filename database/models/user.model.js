@@ -6,19 +6,6 @@ const {v4: uuid} = require('uuid');
 const sequelize = require('../db');
 
 class User extends Model {
-    async findLinkedAccount() {
-        return AccountModel.findOne({where: {UserId: this.id}});
-    }
-
-    async isProvider() {
-        const acc = await this.findLinkedAccount();
-        return acc.type === 'provider';
-    }
-
-    async isAdmin() {
-        const acc = await this.findLinkedAccount();
-        return acc.type === 'admin';
-    }
 }
 
 const UserModel = User.init({
@@ -32,9 +19,6 @@ const UserModel = User.init({
     modelName: 'User'
 });
 
-
-console.log(sequelize.models);
-UserModel.hasOne(AccountModel);
 UserModel.hasMany(ProductModel);
 ProductModel.belongsTo(UserModel);
 

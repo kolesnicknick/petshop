@@ -6,7 +6,7 @@ const CreateProductDto = Joi.object().keys({
     price: Joi.number().required(),
     gender: Joi.string(),
     weight: Joi.number(),
-    birth_date: Joi.string().required(),
+    birth_date: Joi.number().required(),
     color: Joi.string(),
     breed: Joi.string().required(),
     temper: Joi.string()

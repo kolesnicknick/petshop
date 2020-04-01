@@ -3,6 +3,7 @@ const { UserModel } =  require('./user.model');
 const sequelize = require('../db');
 const { v1: uuid } = require('uuid');
 
+
 class Account extends Model {}
 
 const AccountModel = Account.init({
@@ -11,6 +12,9 @@ const AccountModel = Account.init({
     balance: {type: DataTypes.INTEGER, allowNull: false},
 }, { sequelize, modelName: 'Account' });
 
-console.log(sequelize.models);
+UserModel.hasOne(AccountModel, {foreignKey: 'UserId', as: 'account'});
+AccountModel.belongsTo(UserModel, {foreignKey: 'UserId', as: 'account'});
+
+
 module.exports = { AccountModel };
 

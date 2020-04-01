@@ -1,10 +1,13 @@
+const {Unauthorized} = require("../exceptions/facade");
+
 module.exports = (req, res, next) => {
-    const authMiddleWare = passport.authenticate('jwt', {session: false}, (err, user) => {
-        if (!user.isProvider()) {
-            return next(new Unauthorized('Invalid jwt token'));
+    const adminMiddleware = passport.authenticate('jwt', {session: false}, (err, user) => {
+        if (!(user.account.type === 'admin')) {
+            return next(new Unauthorized('You should be an admin to perform this action'));
         } else {
             next();
         }
     });
-    authMiddleWare(req, res, next);
+
+    adminMiddleware(req, res, next);
 };

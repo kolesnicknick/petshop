@@ -1,9 +1,11 @@
+const { AccountModel } = require("../../database/models/account.model");
+
 const bcrypt = require('bcrypt');
 const {UserModel} = require('../../database/models/user.model');
 const accountService = require('../accounts/account.service');
 const {BadRequest, NotFound} = require('../../common/exceptions/facade');
 const sequelize = require('../../database/db');
-const { v4: uuid } = require('uuid');
+const {v4: uuid} = require('uuid');
 
 class UsersService {
 
@@ -18,6 +20,15 @@ class UsersService {
             throw new NotFound('User not found');
         }
 
+        return user;
+    }
+
+    async findMe(id, transaction) {
+        const user = await UserModel.findOne({
+                where: {id}, include: [
+                    {model: AccountModel, as: 'account'}]
+            },
+            {transaction});
         return user;
     }
 
@@ -50,8 +61,13 @@ class UsersService {
             console.log(`user created, model is: ${userModel.toString()}`);
 
             //create account with link to user
-            console.log(`Creating account for user with data: `+userModel.dataValues.id);
-            const account = await accountService.createOne({id:userId, UserId: userModel.dataValues.id, userType: "default", balance: 1000}, transaction);
+            console.log(`Creating account for user with data: ` + userModel.dataValues.id);
+            const account = await accountService.createOne({
+                id: userId,
+                UserId: userModel.dataValues.id,
+                userType: "default",
+                balance: 1000
+            }, transaction);
             userModel.password = await bcrypt.hash(userData.password, 10);
             const userReturnData = (await userModel.save()).dataValues;
             userReturnData.account = account.dataValues;
