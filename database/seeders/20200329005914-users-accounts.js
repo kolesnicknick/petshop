@@ -8,7 +8,8 @@ module.exports = {
     queryInterface.bulkInsert('Accounts', accounts);
 
     let updatedPets = pets.map(pet => {
-        pet.UserId = accounts.find(acc => acc.userType = 'provider').UserId;
+        pet.UserId = accounts.find(acc => acc.userType === 'provider').UserId;
+        pet.isSold = false;
         return pet;
     });
     updatedPets.forEach(console.log);

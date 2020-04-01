@@ -7,7 +7,12 @@ const queryMapper = require('./ProductsQueryMapper');
 class ProductService {
 
     async findMany(query) {
-        let params = queryMapper.startFrom(query).build();
+        let params = queryMapper.startFrom(query).withPageAndLimit(query.page, query.limit).withIsSold(false).build();
+        return ProductModel.findAll(params);
+    }
+
+    async count(query) {
+        let params = queryMapper.startFrom(query).withIsSold(false).build();
         return ProductModel.findAll(params);
     }
 
@@ -22,7 +27,7 @@ class ProductService {
         const product = await ProductModel.findOne({where: {id}}, {transaction});
 
         if (!product) {
-            throw new NotFound('User not found');
+            throw new NotFound('Product not found');
         }
 
         return product;

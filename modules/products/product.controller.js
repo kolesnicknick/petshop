@@ -9,18 +9,22 @@ class ProductController {
     });
 
     getProductsNotSold = asyncHandler(async (req, res, next) => {
+        if (!req.query.limit) {
+            req.query.limit = 10
+        }
+        if (!req.query.page) {
+            req.query.page = 1
+        }
         const products = (await productService.findMany(req.query));
-        const productsFiltered = products.filter(product => (product.isSold == null || product.isSold === false));
-        const limit = req.query.limit || 10;
-        const pages = productsFiltered.length / limit;
-        responseHandler(res, productsFiltered, {
+        const pages = products.length / req.query.limit;
+        responseHandler(res, products, {
             page: +req.query.page,
-            totalPages: Math.ceil(pages)
+            totalPages: (await productService.count(req.query)).length / req.query.limit
         });
     });
 
     createOne = asyncHandler(async (req, res, next) => {
-        const product = await productService.createOne(req.body);
+        const product = await productService.createOne(req.body, req.user);
         responseHandler(res, product);
     });
 

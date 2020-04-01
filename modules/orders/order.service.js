@@ -18,7 +18,6 @@ class OrderService {
             let admin = (await userService.findOneByEmail('kolesniknikolai92@gmail.com')).dataValues;
             let buyer = (await userService.findOneById(buyerId, transaction)).dataValues;
             let buyerAccount = (await accountService.findOneByUserId(buyer.id, transaction)).dataValues;
-
             let productItems = (await Promise.all(products
                 .map(product => productService.findOneById(product.id, transaction))))
                 .map(p => p.dataValues);

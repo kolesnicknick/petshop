@@ -25,9 +25,14 @@ class ProductsQueryMapper {
                     return this;
                 }
 
+                withIsSold(shouldBeSold) {
+                    this.query.where.isSold = shouldBeSold;
+                    return this;
+                }
+
                 withPageAndLimit(page, limit) {
                     this.query.limit = limit ? limit : 10;
-                    this.query.offset = (page ? page-1 : 0)*this.query.limit;
+                    this.query.offset = (page ? page - 1 : 0) * this.query.limit;
                     return this;
                 }
 

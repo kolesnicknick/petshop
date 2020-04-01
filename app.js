@@ -13,7 +13,7 @@ const rateLimit = require('express-rate-limit');
 const cors = require('cors');
 app.use(xss());
 app.use(cors());
-app.use(rateLimit({ windowMs: 600000, max: 100 }));
+// app.use(rateLimit({ windowMs: 600000, max: 100 }));
 
 app.use(bodyParser.json());
 app.use(logger('dev'));
