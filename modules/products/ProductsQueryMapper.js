@@ -10,18 +10,29 @@ class ProductsQueryMapper {
                 }
 
                 startFrom(reqQuery) {
-                    if (typeof reqQuery.sorting !== "undefined") { this.withSort( reqQuery.sorting ) }
-                    if (typeof reqQuery.breed !== "undefined"){ this.withBreed(reqQuery.breed) }
-                    if (typeof reqQuery.categories !== "undefined"){ this.withCategories(reqQuery.categories) }
+                    if (typeof reqQuery.sort !== "undefined") {
+                        this.withSort(reqQuery.sort)
+                    }
+                    if (typeof reqQuery.breed !== "undefined") {
+                        this.withBreed(reqQuery.breed)
+                    }
+                    if (typeof reqQuery.categories !== "undefined") {
+                        this.withCategories(reqQuery.categories)
+                    }
+                    if (typeof reqQuery.name !== "undefined") {
+                        this.withName(reqQuery.name)
+                    }
                     return this;
                 }
 
                 withSort(sortParams) {
-                    let order = [];
-                    sortParams.includes('age:ASC') ? order.push(['birth_date', 'ASC']) : order.push(['birth_date', 'DESC']);
-                    sortParams.includes('price:DESC') ? order.push(['price', 'DESC']) : order.push(['price', 'ASC']);
-                    console.log(order.length);
-                    order.forEach(i => this.query.order.push(i));
+                    if (sortParams) {
+                        let order = [];
+                        sortParams.includes('age:ASC') ? order.push(['birth_date', 'ASC']) : order.push(['birth_date', 'DESC']);
+                        sortParams.includes('price:DESC') ? order.push(['price', 'DESC']) : order.push(['price', 'ASC']);
+                        console.log(order.length);
+                        order.forEach(i => this.query.order.push(i));
+                    }
                     return this;
                 }
 
@@ -41,8 +52,13 @@ class ProductsQueryMapper {
                     return this;
                 }
 
+                withName(name) {
+                    this.query.where.name = {[Op.like]: `%${name}%`};
+                    return this;
+                }
+
                 withCategories(categories) {
-                    this.query.where.breed = {[Op.like]: `%${categories}%`};
+                    this.query.where.species = {[Op.like]: `%${categories}%`};
                     return this;
                 }
 
