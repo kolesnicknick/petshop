@@ -1,7 +1,10 @@
-# lms-pno-processor
-Google Cloud Function for the LMS Data Processor
-The functions works on Pub/Sub Google Cloud event emmitment
-The goal of this function is to work as a glue between PNO, Docebo API in dependency to User storage
+# Petshop full stack application
+Petshop where you can post pet you want to sell, buy pet, user management, roles management(seller/buyer/admin).
+Backend: Express
+FrontEnd: Vanilla JS(react-like).
+Patterns used:
+FrontEnd: Observer(Pub/Sub), Builder, Singletone, State pattern, Router, MVC
+Backend: Builder, Singleton
 
 ## System Requirement
 - NodeJS 10+
