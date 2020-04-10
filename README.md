@@ -3,7 +3,7 @@ Petshop where you can post pet you want to sell, buy pet, user management, roles
 - Backend: Express
 - FrontEnd: Vanilla JS(react-like).
 ## Patterns used:
-- FrontEnd: Observer(Pub/Sub), Builder, Singletone, State pattern, Router, MVC
+- FrontEnd: Observer(Pub/Sub), Builder, Singleton, State pattern, Router, MVC
 - Backend: Builder, Singleton, Module pattern
 
 ## System Requirement
