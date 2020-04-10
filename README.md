@@ -1,10 +1,10 @@
-# Petshop full stack application
+## Petshop full stack application
 Petshop where you can post pet you want to sell, buy pet, user management, roles management(seller/buyer/admin).
-Backend: Express
-FrontEnd: Vanilla JS(react-like).
-Patterns used:
-FrontEnd: Observer(Pub/Sub), Builder, Singletone, State pattern, Router, MVC
-Backend: Builder, Singleton
+- Backend: Express
+- FrontEnd: Vanilla JS(react-like).
+## Patterns used:
+- FrontEnd: Observer(Pub/Sub), Builder, Singletone, State pattern, Router, MVC
+- Backend: Builder, Singleton, Module pattern
 
 ## System Requirement
 - NodeJS 10+
